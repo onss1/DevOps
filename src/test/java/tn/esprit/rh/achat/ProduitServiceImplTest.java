@@ -32,9 +32,11 @@ public class ProduitServiceImplTest {
 		Date Date1 = dateFormat.parse("25/09/2000");
 		Date Date2 = dateFormat.parse("26/10/1919");
 		List<Produit> produits = (List<Produit>) produitservice.retrieveAllProduits();
-		int expected = produits.size();
+		//nb d element dans la liste 
+		int expected = produits.size(); 
 		Produit c = new Produit("produitI", "produitII", (float) 2.5, Date1,Date2);
 		Produit produit = produitservice.addProduit(c);
+		//assertEquals(taille de la liste 9bal l ajout + 1,size de la liste ba3d l ajout)
 		assertEquals(expected + 1, produitservice.retrieveAllProduits().size());
 		produitservice.deleteProduit(produit.getIdProduit());
  	}
@@ -45,6 +47,7 @@ public class ProduitServiceImplTest {
 		Date Date2 = dateFormat.parse("26/10/1919");
 		Produit c = new Produit("produitI", "produitII", (float) 2.5, Date1,Date2);
 		Produit savedProduit= produitservice.addProduit(c);
+		//eli savi fih mech feragh
 		assertNotNull(savedProduit.getDateCreation());
 		assertNotNull(savedProduit.getDateDerniereModification());
 		assertNotNull(savedProduit.getPrix());
@@ -59,10 +62,13 @@ public class ProduitServiceImplTest {
 		Date Date2 = dateFormat.parse("26/10/1919");
 		Produit c = new Produit("produitI", "produitII", (float) 2.5, Date1,Date2);
 		Produit savedproduit= produitservice.addProduit(c);
+		//supprimer aves son id
 		produitservice.deleteProduit(savedproduit.getIdProduit());
+		//assertNull eli produit feragh
 		assertNull(produitservice.retrieveProduit(savedproduit.getIdProduit()));
 	}
 	@Test
+	//un seul produit
 	public void testretrieveProduit() throws ParseException
 	{
 
@@ -82,6 +88,8 @@ public class ProduitServiceImplTest {
 		Produit c = new Produit("produitI", "produitII", (float) 2.5, Date1,Date2);	
 		c.setLibelleProduit("produit3");
 		assertThat(c.getLibelleProduit()).isEqualTo("produit3");
+		System.out.println(c.getLibelleProduit());
+
 			}
 	@Test
 	@Transactional
@@ -91,7 +99,8 @@ public class ProduitServiceImplTest {
 		Date Date1 = dateFormat.parse("25/09/2000");
 		Date Date2 = dateFormat.parse("26/10/1919");
 		Produit c = new Produit("produitI", "produitII", (float) 2.5, Date1,Date2);	
-		Stock s = new Stock("stock test",10,100);	
+		Stock s = new Stock("stock test",10,100);
+		//t3abi stock
 		c.setStock(s);
 		Produit produit = produitservice.addProduit(c);
  		assertThat(produit.getStock().getIdStock()).isEqualTo(s.getIdStock());
