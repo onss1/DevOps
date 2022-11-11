@@ -48,8 +48,6 @@ public class ReglementServiceImplTest {
 
 		assertEquals(expected+1, ReglementService.retrieveAllReglements().size());
 		assertNotNull(savedReglement.getIdReglement());
-		assertNotNull(savedReglement.getMontantPaye());
-		assertNotNull(savedReglement.getMontantRestant());
 		assertNotNull(savedReglement.getPayee());
 		assertNotNull(savedReglement.getDateReglement());
 		
