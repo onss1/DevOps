@@ -7,4 +7,6 @@ import tn.esprit.rh.achat.entities.Operateur;
 @Repository
 public interface OperateurRepository extends CrudRepository<Operateur, Long> {
 
+	
+	//Repo
 }
