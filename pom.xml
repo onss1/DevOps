@@ -53,6 +53,11 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>3.0.0</version>
 		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
 
 	</dependencies>
 
@@ -70,7 +75,18 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+<artifactId>maven-resources-plugin</artifactId>
+<version>3.0.2</version>
+</plugin>
 		</plugins>
 	</build>
-
+<distributionManagement>
+	   <repository>
+	      <id>deploymentRepo</id>
+	      <name>Nexus repository</name>	   
+	      <url>http://192.168.33.10:8081/repository/maven-releases/</url>
+	   </repository>
+	</distributionManagement>
+	<packaging>war</packaging>
 </project>
