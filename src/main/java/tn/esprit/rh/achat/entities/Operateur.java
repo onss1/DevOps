@@ -35,4 +35,8 @@ public class Operateur implements Serializable{
 	@JsonIgnore
 	private Set<Facture> factures;
 	
+	
+	
+	// Entity
+	
 }
