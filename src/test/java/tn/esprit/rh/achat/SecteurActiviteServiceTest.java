@@ -1,4 +1,4 @@
-package tn.esprit.rh.achat.services;
+package tn.esprit.rh.achat;
 
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -53,7 +53,7 @@ import static org.mockito.Mockito.*;
 
     @Test
     void testAddSecteurActivite() {
-        SecteurActivite secteurActivite = new SecteurActivite(0, null, null, secteurActivite);
+        SecteurActivite secteurActivite = new SecteurActivite();
         secteurActivite.setIdSecteurActivite(10L);
         secteurActivite.setCodeSecteurActivite("op1");
         secteurActivite.setLibelleSecteurActivite("123");
