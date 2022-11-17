@@ -118,12 +118,7 @@ println "date : " + datePart + "\ttime : " + timePart
         sh 'docker-compose up -d'
         }
         }
-            stage('MVN TEST')
-        {
-        steps {
-        sh 'mvn test'
-        }
-        }
+           
 
 
        }
